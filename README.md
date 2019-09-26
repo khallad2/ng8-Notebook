@@ -34,7 +34,3 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
-
-### Additional
-* I have used Browser storage to save the data instead of backend rest APIs
-* used https://mdbootstrap.com/ for UI 
