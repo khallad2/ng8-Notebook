@@ -1,0 +1,65 @@
+<!-- Toolbar -->
+<div class="toolbar" role="banner">
+  <div class="row">
+    <div class="col-5 animated bounceInLeft">
+      <a href="https://www.nexxiot.com/en" target="_blank">
+      <img class="logo text-white" src="assets/nexxiot-logo.png">
+      </a>
+    </div>
+    <div class="title col-6"><h1>{{title}}</h1></div>
+  </div>
+</div>
+<!-- Toolbar -->
+<div *ngIf="!noDataFound" class="add-note waves-light" color="primary" (click)="basicModal.show()" dbWavesEffec>
+  <i class="fas fa-4x fa-comment-medical"></i>
+</div>
+<div *ngIf="!noDataFound" class="">
+  <div *ngFor="let note of allNotes; let i = index">
+    <app-note [note]="note" [index]="i" (movements)="handleMovements($event)" (deletedIndex)="deleteNote($event)"></app-note>
+    <br />
+  </div>
+  <footer>
+
+  </footer>
+</div>
+
+<div *ngIf="noDataFound">
+  <div class="add-note waves-light" color="primary" (click)="basicModal.show()" dbWavesEffec>
+    <i class="fas fa-9x fa-comment-medical"></i>
+  </div>
+</div>
+
+<div mdbModal #basicModal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <form #myForm = "ngForm" (ngSubmit) = "myForm.form.controls.title.valid && addNote(myForm.value)" novalidate>
+        <div class="modal-header">
+          <button type="button" class="close pull-right" aria-label="Close" (click)="basicModal.hide()">
+            <span aria-hidden="true">×</span>
+          </button>
+          <h4 class="modal-title w-100 flex-center" id="myModalLabel">
+            {{commonStrings.modalTitle}}
+          </h4>
+        </div>
+
+
+        <div class="modal-body">
+          <div class="md-form">
+            <input mdbInput type="text" name="title" id="title" class="form-control" [(ngModel)]="newNote.title" required>
+            <label for="title" class=""> {{commonStrings.noteTitleLabel}} </label>
+          </div>
+        </div>
+
+      <div class="modal-footer">
+        <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close" (click)="basicModal.hide()" mdbWavesEffect>
+          {{commonStrings.modalDiscardLabel}}
+        </button>
+        <button type="submit" value="submit" mdbBtn color="primary" class="relative waves-light pull-right" (click)="basicModal.hide()"
+                [disabled]="!myForm.form.valid" mdbWavesEffect>
+          {{commonStrings.modalSaveLabel}}
+        </button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>

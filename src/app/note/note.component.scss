@@ -1,0 +1,38 @@
+.my-card {
+  width: 90%;
+  padding-left: 20%;
+}
+
+.card-actions{
+  float: right;
+  align-items: end;
+  text-align: end;
+}
+
+.my-arrow {
+  color: white;
+}
+
+.my-arrow:hover {
+  color: #4285F4;
+  cursor: pointer;
+}
+
+.my-card-header {
+  background-color: #ffdf7e;
+  color: #000000;
+  font: 10px 'Source Code Pro', bold;;
+}
+
+.my-card-footer {
+  background-color: #ffdf7e;
+  color: #000000;
+  font: 10px 'Source Code Pro', bold;;
+}
+
+.my-trash:hover {
+  color: darkred;
+  cursor: pointer
+}
+
+

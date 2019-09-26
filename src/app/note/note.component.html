@@ -1,0 +1,18 @@
+<div class="my-card">
+  <i *ngIf="showUpArrow" (click)="moveUp()" class="fas fa-3x fa-angle-up my-arrow"></i>
+<mdb-card class="animated bounceInDown">
+  <mdb-card-header class="my-card-header">
+    <div class="row">
+      <div class="col-8 text-black"><h3>{{note.title}}</h3></div>
+      <div class="card-actions col-4">
+        <i class="my-trash fas fa-3x fa-trash-alt text-dark-red" (click)="delete(index)"></i>
+      </div>
+    </div>
+  </mdb-card-header>
+<!--  <mdb-card-body><p>{{note.body}}</p></mdb-card-body>-->
+  <mdb-card-footer class="my-card-footer">{{index + 1}}</mdb-card-footer>
+</mdb-card>
+  <i *ngIf="shoWDownArrow" (click)="moveDown()" class="fas fa-3x fa-angle-down my-arrow"></i>
+</div>
+
+
