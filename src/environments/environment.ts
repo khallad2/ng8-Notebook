@@ -19,5 +19,5 @@ export const APIs = {
 };
 
 export const APP = {
-  title: 'Nexxiot NoteBook'
+  title: 'Ng8 NoteBook'
 };
