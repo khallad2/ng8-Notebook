@@ -1,6 +1,6 @@
 # Angular Notebook
 
-[![N|Solid](appPhoto.png)]()
+[![N|Solid](appPhoto1.png)]()
 
 * Simple app that allows managing of a single notebook with multiple cards
 * Possible to create new cards in the notebook
